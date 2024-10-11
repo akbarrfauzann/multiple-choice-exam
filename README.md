@@ -18,7 +18,7 @@ Sebuah aplikasi kuis interaktif yang memungkinkan pengguna mengikuti ujian pilih
 
 
 ## 🛠️ Teknologi yang Digunakan
-- **React**: Framework utama untuk membangun antarmuka pengguna.
+- **React Js**: Framework utama untuk membangun antarmuka pengguna.
 - **Tailwind CSS**: Untuk styling modern dan responsif.
 - **React Icons**: Memudahkan penambahan ikon di antarmuka.
 - **Custom Hooks**: `useExam`, `useTimer` untuk pengelolaan state dan pemakaian ulang logika.
