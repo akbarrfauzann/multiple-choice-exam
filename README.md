@@ -1,6 +1,5 @@
-Berikut adalah deskripsi proyek Aplikasi Ujian Pilihan Ganda yang lebih terstruktur dalam bahasa Indonesia:
-
 Aplikasi Ujian Pilihan Ganda
+
 Sebuah aplikasi kuis interaktif yang memungkinkan pengguna mengikuti ujian pilihan ganda dengan batas waktu.
 
 Fitur
