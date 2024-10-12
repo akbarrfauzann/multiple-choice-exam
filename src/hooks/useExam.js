@@ -7,7 +7,7 @@ export const useExam = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
-  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [examCompleted, setExamCompleted] = useState(false);
   const [score, setScore] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ export const useExam = () => {
 
   const { timeLeft, startTimer, stopTimer, resetTimer } = useTimer(3600, () => {
     setIsTimeUp(true);
-    setQuizCompleted(true);
+    setExamCompleted(true);
   });
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export const useExam = () => {
       }
 
       if (currentQuestionIndex === questions.length - 1) {
-        setQuizCompleted(true);
+        setExamCompleted(true);
         stopTimer();
       }
     }
@@ -60,17 +60,17 @@ export const useExam = () => {
       setSelectedAnswer(null);
       setIsAnswerSubmitted(false);
     } else if (isAnswerSubmitted) {
-      setQuizCompleted(true);
+      setExamCompleted(true);
       stopTimer();
     }
   };
 
-  const restartQuiz = () => {
+  const restartExam = () => {
     setCurrentQuestionIndex(0);
     setSelectedAnswer(null);
     setIsAnswerSubmitted(false);
     setScore(0);
-    setQuizCompleted(false);
+    setExamCompleted(false);
     setIsTimeUp(false);
     resetTimer();
     startTimer();
@@ -81,7 +81,7 @@ export const useExam = () => {
     currentQuestionIndex,
     selectedAnswer,
     isAnswerSubmitted,
-    quizCompleted,
+    examCompleted,
     score,
     timeLeft,
     isLoading,
@@ -90,6 +90,6 @@ export const useExam = () => {
     handleAnswerSelect,
     handleSubmit,
     handleNext,
-    restartQuiz,
+    restartExam,
   };
 };

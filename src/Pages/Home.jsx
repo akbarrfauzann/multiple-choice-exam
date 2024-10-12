@@ -5,13 +5,13 @@ import { useExam } from "../hooks/useExam";
 import { LuLoader2 } from "react-icons/lu";
 
 const Home = () => {
-  const { questions, currentQuestionIndex, selectedAnswer, isAnswerSubmitted, quizCompleted, score, timeLeft, isLoading, error, handleAnswerSelect, handleSubmit, isTimeUp, handleNext, restartQuiz } = useExam();
+  const { questions, currentQuestionIndex, selectedAnswer, isAnswerSubmitted, examCompleted, score, timeLeft, isLoading, error, handleAnswerSelect, handleSubmit, isTimeUp, handleNext, restartExam } = useExam();
 
-  if (quizCompleted) {
+  if (examCompleted) {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <div className="bg-white rounded-lg shadow-md p-4 max-w-md">
-          <h2 className={`text-3xl font-bold text-center ${isTimeUp ? "text-red-500" : "text-lime-500"}`}>{isTimeUp ? "Time's Up!" : "Quiz Results"}</h2>
+          <h2 className={`text-3xl font-bold text-center ${isTimeUp ? "text-red-500" : "text-lime-500"}`}>{isTimeUp ? "Time's Up!" : "Exam Results"}</h2>
           <div className="flex justify-center items-center mt-2">
             <div className="flex flex-col items-center">
               <p className="text-2xl font-semibold">Your Score :</p>
@@ -21,8 +21,8 @@ const Home = () => {
             </div>
           </div>
           <div className="text-center mt-4">
-            <button className="px-6 py-3 bg-lime-600 font-medium text-white rounded-lg hover:bg-lime-700" onClick={restartQuiz}>
-              Restart Quiz
+            <button className="px-6 py-3 bg-lime-600 font-medium text-white rounded-lg hover:bg-lime-700" onClick={restartExam}>
+              Restart Exam
             </button>
           </div>
         </div>
@@ -45,7 +45,7 @@ const Home = () => {
     return (
       <div className="text-red-600">
         Error: {error}
-        <button onClick={restartQuiz} className="ml-4 px-4 py-2 bg-lime-600 text-white rounded-lg">
+        <button onClick={restartExam} className="ml-4 px-4 py-2 bg-lime-600 text-white rounded-lg">
           Try Again
         </button>
       </div>
